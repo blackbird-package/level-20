@@ -2,7 +2,7 @@
 blackbird netbook or laptop config
 
 
-## pre chroot
+## prepare
 ### physical volume
 
 ### ecnrypt partition
@@ -35,7 +35,7 @@ blackbird netbook or laptop config
 
 #### data home
 
-### 
+### configs
 ```
 ```
 
