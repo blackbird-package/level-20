@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+
 ## app level 1
 pacstrap /mnt linux-hardened linux-firmware mkinitcpio base lvm2 btrfs-progs bubblewrap-suid --noconfirm
 
@@ -73,4 +74,9 @@ if [[ ! -z $( cat /proc/cpuinfo | grep "AMD" )  ]];then
     pacstrap /mnt amd-ucode --noconfirm
 fi
 
-cp -fr mnt/* /mnt/
+cp -fr mnt/*  /mnt/
+cp -fr sysd/* /mnt/
+
+
+genfstab -U /mnt > /mnt/etc/fstab
+arch-chroot /mnt
