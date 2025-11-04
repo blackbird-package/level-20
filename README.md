@@ -17,7 +17,6 @@
 - gunakan fdisk, cfdisk, parted untuk membuat physical volume sesuai dengan guideline
 - minimum size untuk perangkat dengan kartu grafis nvidia sebesar `1.5GB`
 
-
 ### logical volume
 
 #### volume proc
@@ -456,7 +455,6 @@ chown -R loki:loki /var/usr
 ```
 passwd loki
 ```
-isikan password default
 - daemon user
 ```
 useradd -d /var/games -u 50 -g games games
@@ -503,9 +501,7 @@ exit
 ```
 passwd -l root
 ```
-
 ### flatpak
-
 ```
 mkdir -p /opt/flat
 ```
@@ -544,7 +540,6 @@ flatpak override --env=GTK_THEME=flow
 ```
 flatpak override --env=ICON_THEME=eggs
 ```
-
 ### clevis ( udev based system with nbde only )
 ```
 su nama_user
@@ -590,6 +585,7 @@ make && make install
 ```
 nvim /etc/systemd/network/20-ethernet.network
 ```
+Ganti `[IP]` denga ip address yang diberikan untuk perangkat anda
 ```
 [Network]
 Address=[IP]/24
@@ -597,7 +593,6 @@ Gateway=10.10.1.1
 DNS=1.1.1.1 8.8.8.8
 MulticastDNS=yes
 ```
-input ip yang diberikan untuk perangkat anda
 
 ### booting
 ```
@@ -621,8 +616,9 @@ bootctl --path=/boot install
 ```
 echo "cryptdevice=UUID=$(blkid -s UUID -o value /dev/[proc physical partition name]):proc root=/dev/proc/root" > /etc/cmdline.d/01-boot.conf
 ```
+Ganti `(IP)` denga ip address yang diberikan untuk perangkat anda
 ```
-echo "ip=(ip address)::10.10.1.1:255.255.255.0::eth0:none nameserver=10.10.1.1 nameserver=1.1.1.1 nameserver=8.8.8.8 nameserver=1.0.0.1 nameserver=8.8.4.4 nameserver=9.9.9.9 nameserver=149.112.112.112 " > /etc/cmdline.d/05-nets.conf
+echo "ip=(IP)::10.10.1.1:255.255.255.0::eth0:none nameserver=10.10.1.1 nameserver=1.1.1.1 nameserver=8.8.8.8 nameserver=1.0.0.1 nameserver=8.8.4.4 nameserver=9.9.9.9 nameserver=149.112.112.112 " > /etc/cmdline.d/05-nets.conf
 ```
 ```
 nvim /etc/cmdline.d/05-nets.conf
@@ -631,7 +627,6 @@ nvim /etc/cmdline.d/05-nets.conf
 ```
 echo "rd.luks.uuid=$(blkid -s UUID -o value /dev/[proc physical partition name])root=/dev/proc/root" > /etc/cmdline.d/01-boot.conf
 ```
-
 **2. cryptab**
 ```
 echo "data UUID=$(blkid -s UUID -o value /dev/[proc physical partition name]) none" >> /etc/crypttab
@@ -661,14 +656,12 @@ systemctl enable --global hyprpolkitagent &&
 systemctl enable --global waybar &&
 systemctl enable --global pipewire-pulse &&
 ```
-
-udev system based only
+for udev system based only
 ```
 systemctl enable clevis-luks-askpass.path
 ```
 
 ### finishing
-
 ```
 mkinitcpio -P
 ```
