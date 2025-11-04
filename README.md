@@ -350,7 +350,7 @@ pacstrap /mnt irqbalance tuned tuned-ppd --noconfirm &&
 pacstrap /mnt rsync grsync --noconfirm &&
 ```
 
-**14. website **
+**14. hosting**
 ```
 pacstrap /mnt go hugo nginx git --noconfirm &&
 ```
@@ -1801,6 +1801,7 @@ git clone https://github.com/blackbird-package/level10.git /tmp/config
 ```
 cp -fr /tmp/config/* /
 ```
+
 
 
 
