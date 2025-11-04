@@ -340,8 +340,8 @@ pacstrap /mnt rsync grsync --noconfirm
 pacstrap /mnt go hugo nginx git --noconfirm
 ```
 
-**15. ucode**
-pilih sesuai dengan jenis prosesor yang digunakan
+**15. ucode**  
+pilih sesuai dengan jenis prosesor yang digunakan  
 for intel
 ```
 pacstrap /mnt intel-ucode --noconfirm
@@ -685,6 +685,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
