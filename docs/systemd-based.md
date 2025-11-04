@@ -378,15 +378,7 @@ echo "tmpfs     					/tmp        		tmpfs   defaults,rw,nosuid,nodev,noexec,relat
 git clone https://github.com/blackbird-package/level20.git /mnt/opt/config
 ```
 ```
-cp -fr /mnt/opt/config/mnt/* /mnt
-```
-fot systemd
-```
 cp -fr /mnt/opt/config/sysd/* /mnt
-```
-fot ndbesys
-```
-cp -fr /mnt/opt/config/udev/* /mnt
 ```
 ### network
  - ethernet
@@ -574,11 +566,6 @@ bootctl --path=/boot install
 
 ### params
 #### kernel
-- udev nbde
-```
-echo "cryptdevice=UUID=$(blkid -s UUID -o value /dev/[proc physical partition name]):proc root=/dev/proc/root" > /etc/cmdline.d/01-boot.conf
-```
-- systemd
 ```
 echo "rd.luks.uuid=$(blkid -s UUID -o value /dev/[proc physical partition name])root=/dev/proc/root" > /etc/cmdline.d/01-boot.conf
 ```
@@ -654,10 +641,6 @@ systemctl enable --global hypridle.service &&
 systemctl enable --global hyprpolkitagent &&
 systemctl enable --global waybar &&
 systemctl enable --global pipewire-pulse &&
-```
-for udev system based only
-```
-systemctl enable clevis-luks-askpass.path
 ```
 
 ## 8. finishing
