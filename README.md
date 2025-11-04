@@ -380,11 +380,11 @@ git clone https://github.com/blackbird-package/level20.git /mnt/opt/config
 ```
 cp -fr /mnt/opt/config/mnt /mnt
 ```
-untuk system berbasis udev nbde 
+- udev nbde 
 ```
 cp -fr /mnt/opt/config/udev /mnt
 ```
-untuk system berbasis systemd
+- systemd
 ```
 cp -fr /mnt/opt/config/syd /mnt
 ```
@@ -693,6 +693,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
