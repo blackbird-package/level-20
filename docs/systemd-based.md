@@ -522,8 +522,6 @@ exit
 ```
 passwd -l root
 ```
-### nbde
-
 ### hids
 ```
 cd /tmp
