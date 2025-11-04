@@ -522,6 +522,9 @@ passwd -l root
 su nama_user
 ```
 ```
+cd ~
+```
+```
 git clone https://aur.archlinux.org/mkinitcpio-clevis-hook.git
 ```
 ```
@@ -700,6 +703,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
