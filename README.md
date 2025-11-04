@@ -524,6 +524,9 @@ clevis luks bind -d /dev/[nama physical disk proc] tang '{"url":"http://10.10.1.
 ```
 clevis luks bind -d /dev/[nama physical disk data] tang '{"url":"http://10.10.1.16:7500"}'
 ```
+``
+cd .. && rm -fr mkinitcpio-clevis-hook
+``
 #### kernel
 Ganti `(IP)` denga ip address yang diberikan untuk perangkat anda
 ```
@@ -554,6 +557,9 @@ cd aide-0.19.2
 ```
 make && make install
 ```
+``
+cd .. && rm aide-0.19.2
+``
 ### network
 ```
 nvim /etc/systemd/network/20-ethernet.network
@@ -586,7 +592,7 @@ bootctl --path=/boot install
 
 ### params
 #### kernel
-- udev with nbde
+- udev nbde
 ```
 echo "cryptdevice=UUID=$(blkid -s UUID -o value /dev/[proc physical partition name]):proc root=/dev/proc/root" > /etc/cmdline.d/01-boot.conf
 ```
@@ -597,6 +603,10 @@ echo "rd.luks.uuid=$(blkid -s UUID -o value /dev/[proc physical partition name])
 #### cryptab
 ```
 echo "data UUID=$(blkid -s UUID -o value /dev/[proc physical partition name]) none" >> /etc/crypttab
+```
+#### uefi image
+```
+mkinitcpio -P
 ```
 
 ## 5. Application
@@ -670,9 +680,6 @@ systemctl enable clevis-luks-askpass.path
 
 ## 7. finishing
 ```
-mkinitcpio -P
-```
-```
 exit
 ```
 ```
@@ -681,6 +688,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
