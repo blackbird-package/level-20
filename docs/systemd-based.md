@@ -2,7 +2,6 @@
 # blackbird protocol level 20
 
 ## 1. prequsite
-- untuk installasi gunakan jaringan LAN yang disediakan pada ruang bersama
 - gunakan ip static yang diberikan untuk terhubung kedalam jaringan internal
 ## 2. preparation
 
