@@ -350,7 +350,7 @@ pacstrap /mnt amd-ucode --noconfirm
 ```
 **16. udev nbde**
 ```
-pacstrap /mnt tang clevis mkinitcpio-nfs-utils luksmeta ethtool
+pacstrap /mnt tang clevis mkinitcpio-nfs-utils luksmeta
 ```
 
 ## 3. preconfing
@@ -504,45 +504,6 @@ exit
 ```
 passwd -l root
 ```
-### flatpak
-```
-mkdir -p /opt/flat
-```
-```
-ln -sf /opt/flat /var/lib/flatpak
-```
-```
-pacstrap /mnt flatpak gnome-software --noconfirm 
-```
-```
-flatpak install --system -y --noninteractive flathub \
-    org.mozilla.firefox \
-    com.google.Chrome \
-    com.visualstudio.code \
-    de.wagnermartin.Plattenalbum \
-    md.obsidian.Obsidian \
-    org.gnome.Evolution \
-    org.gnome.Calculator \
-    com.github.tchx84.Flatseal \
-    org.keepassxc.KeePassXC \
-    org.telegram.desktop \
-    org.gnome.World.Secrets \
-    com.mongodb.Compass \
-    io.beekeeperstudio.Studio \
-    fr.free.Homebank
-```
-```
-flatpak override --filesystem=$HOME/.themes
-```
-```
-flatpak override --filesystem=$HOME/.icons
-```
-```
-flatpak override --env=GTK_THEME=flow
-```
-```
-flatpak override --env=ICON_THEME=eggs
-```
 ### nbde
 #### clevis
 ```
@@ -638,7 +599,47 @@ echo "rd.luks.uuid=$(blkid -s UUID -o value /dev/[proc physical partition name])
 echo "data UUID=$(blkid -s UUID -o value /dev/[proc physical partition name]) none" >> /etc/crypttab
 ```
 
-### service
+## 5. Application
+```
+mkdir -p /opt/flat
+```
+```
+ln -sf /opt/flat /var/lib/flatpak
+```
+```
+pacstrap /mnt flatpak gnome-software --noconfirm 
+```
+```
+flatpak install --system -y --noninteractive flathub \
+    org.mozilla.firefox \
+    com.google.Chrome \
+    com.visualstudio.code \
+    de.wagnermartin.Plattenalbum \
+    md.obsidian.Obsidian \
+    org.gnome.Evolution \
+    org.gnome.Calculator \
+    com.github.tchx84.Flatseal \
+    org.keepassxc.KeePassXC \
+    org.telegram.desktop \
+    org.gnome.World.Secrets \
+    com.mongodb.Compass \
+    io.beekeeperstudio.Studio \
+    fr.free.Homebank
+```
+```
+flatpak override --filesystem=$HOME/.themes
+```
+```
+flatpak override --filesystem=$HOME/.icons
+```
+```
+flatpak override --env=GTK_THEME=flow
+```
+```
+flatpak override --env=ICON_THEME=eggs
+```
+
+## 6. Service
 ```
 systemctl enable systemd-timesyncd.service &&
 systemctl enable tangd.socket &&
@@ -667,7 +668,7 @@ for udev system based only
 systemctl enable clevis-luks-askpass.path
 ```
 
-## 4. finishing
+## 7. finishing
 ```
 mkinitcpio -P
 ```
@@ -680,6 +681,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
