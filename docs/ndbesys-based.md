@@ -678,6 +678,7 @@ systemctl enable --global hypridle.service &&
 systemctl enable --global hyprpolkitagent &&
 systemctl enable --global waybar &&
 systemctl enable --global pipewire-pulse &&
+systemctl enable clevis-luks-askpass.path
 ```
 
 ## 8. finishing
