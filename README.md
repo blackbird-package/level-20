@@ -536,9 +536,9 @@ clevis luks bind -d /dev/[nama physical disk proc] tang '{"url":"http://10.10.1.
 ```
 clevis luks bind -d /dev/[nama physical disk data] tang '{"url":"http://10.10.1.16:7500"}'
 ```
-``
+```
 cd .. && rm -fr mkinitcpio-clevis-hook
-``
+```
 #### kernel
 Ganti `(IP)` denga ip address yang diberikan untuk perangkat anda
 ```
@@ -700,6 +700,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
