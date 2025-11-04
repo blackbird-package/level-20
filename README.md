@@ -273,52 +273,52 @@ mount -o rw,nodev,noexec,nosuid,relatime /dev/data/home /mnt/home
 **Technical Procedure**
 **1. kernel**
 ```
-pacstrap /mnt linux-hardened linux-firmware mkinitcpio base lvm2 btrfs-progs bubblewrap-suid --noconfirm &&
+pacstrap /mnt linux-hardened linux-firmware mkinitcpio base lvm2 btrfs-progs bubblewrap-suid --noconfirm
 ```
 
 **2. devel**
 ```
-pacstrap /mnt sudo debugedit fakeroot pkgconf bison gcc pcre flex wget make gcc curl less --noconfirm &&
+pacstrap /mnt sudo debugedit fakeroot pkgconf bison gcc pcre flex wget make gcc curl less --noconfirm
 ```
 
 **3. desktop**
 ```
-pacstrap /mnt uwsm hyprland hyprpicker hyprshot hypridle hyprlock hyprpolkitagent xdg-desktop-portal-hyprland qt5-wayland qt6-wayland wl-clipboard cliphist mailcap brightnessctl --noconfirm &&
+pacstrap /mnt uwsm hyprland hyprpicker hyprshot hypridle hyprlock hyprpolkitagent xdg-desktop-portal-hyprland qt5-wayland qt6-wayland wl-clipboard cliphist mailcap brightnessctl --noconfirm
 ```
 
 **4. panel**
 ```
-pacstrap /mnt mako waybar wofi mpd mpc --noconfirm &&
+pacstrap /mnt mako waybar wofi mpd mpc --noconfirm
 ```
 
 **5. audio system**
 ```
-pacstrap /mnt pipewire pipewire-pulse pipewire-jack wireplumber pavucontrol sof-firmware mpd mpc --noconfirm &&
+pacstrap /mnt pipewire pipewire-pulse pipewire-jack wireplumber pavucontrol sof-firmware mpd mpc --noconfirm
 ```
 
 **6. file system**
 ```
-pacstrap /mnt nautilus nautilus-image-converter sushi --noconfirm &&
+pacstrap /mnt nautilus nautilus-image-converter sushi --noconfirm
 ```
 
 **7. font system**
 ```
-pacstrap /mnt ttf-jetbrains-mono-nerd ttf-droid --noconfirm &&
+pacstrap /mnt ttf-jetbrains-mono-nerd ttf-droid --noconfirm
 ```
 
 **8. terminal**
 ```
-pacstrap /mnt kitty kitty-terminfo neovim --noconfirm &&
+pacstrap /mnt kitty kitty-terminfo neovim --noconfirm
  ```
 
 **9. password**
 ```
-pacstrap /mnt gnome-keyring libsecret libpam-google-authenticator libpwquality cracklib polkit apparmor qrencode --noconfirm &&
+pacstrap /mnt gnome-keyring libsecret libpam-google-authenticator libpwquality cracklib polkit apparmor qrencode --noconfirm
 ```
 
 **10. monitoring**
 ```
-pacstrap /mnt prometheus prometheus-node-exporter btop --noconfirm &&
+pacstrap /mnt prometheus prometheus-node-exporter btop --noconfirm
 ```
 
 **11. network**
@@ -342,17 +342,17 @@ cp /var/lib/iwd/* /mnt/var/lib/iwd/
 
 **12. performance**
 ```
-pacstrap /mnt irqbalance tuned tuned-ppd --noconfirm &&
+pacstrap /mnt irqbalance tuned tuned-ppd --noconfirm
 ```
 
 **13. backup**
 ```
-pacstrap /mnt rsync grsync --noconfirm &&
+pacstrap /mnt rsync grsync --noconfirm 
 ```
 
 **14. hosting**
 ```
-pacstrap /mnt go hugo nginx git --noconfirm &&
+pacstrap /mnt go hugo nginx git --noconfirm
 ```
 
 **15. ucode**
@@ -387,13 +387,15 @@ git clone https://github.com/blackbird-package /mnt/opt/config
 ```
 cp -fr /mnt/opt/config/mnt /mnt
 ```
-jika menggunakan nbde
+jika menggunakan udev 
 ```
 cp -fr /mnt/opt/config/udev /mnt
 ```
+**note**
+untuk pengguna keamanan berbasis Network Bond Disk Encryption maka gunakan udev
 jika menggunakan systemd
 ```
-cp -fr /mnt/opt/config/udev /mnt
+cp -fr /mnt/opt/config/syd /mnt
 ```
 
 
@@ -1819,6 +1821,7 @@ git clone https://github.com/blackbird-package/level10.git /tmp/config
 ```
 cp -fr /tmp/config/* /
 ```
+
 
 
 
