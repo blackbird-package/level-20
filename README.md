@@ -671,9 +671,6 @@ systemctl enable --global hypridle.service &&
 systemctl enable --global hyprpolkitagent &&
 systemctl enable --global waybar &&
 systemctl enable --global pipewire-pulse &&
-```
-for udev system based only
-```
 systemctl enable clevis-luks-askpass.path
 ```
 
@@ -687,6 +684,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
