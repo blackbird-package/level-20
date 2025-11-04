@@ -375,7 +375,7 @@ echo "tmpfs     					/tmp        		tmpfs   defaults,rw,nosuid,nodev,noexec,relat
 ```
 ### system
 ```
-git clone https://github.com/blackbird-package /mnt/opt/config
+git clone https://github.com/blackbird-package/level20.git /mnt/opt/config
 ```
 ```
 cp -fr /mnt/opt/config/mnt /mnt
@@ -693,6 +693,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
