@@ -6,6 +6,19 @@
 - gunakan ip static yang diberikan untuk terhubung kedalam jaringan internal
 ## 2. preparation
 
+### networking 
+```
+nvim /etc/systemd/network/20-ethernet.network
+```
+Ganti `[IP]` denga ip address yang diberikan untuk perangkat anda
+```
+[Network]
+Address=[IP]/24
+Gateway=10.10.1.1
+DNS=1.1.1.1 8.8.8.8
+MulticastDNS=yes
+```
+
 ### additional package
 ```
 pacman -Syy
@@ -535,23 +548,9 @@ cd aide-0.19.2
 make && make install
 ```
 ```
-cd .. && rm aide-0.19.2
+cd .. && rm -fr aide-0.19.2
 ```
-### network
-```
-nvim /etc/systemd/network/20-ethernet.network
-```
-Ganti `[IP]` denga ip address yang diberikan untuk perangkat anda
-```
-[Network]
-Address=[IP]/24
-Gateway=10.10.1.1
-DNS=1.1.1.1 8.8.8.8
-MulticastDNS=yes
-```
-
 ### booting
-
 ```
 rm /boot/initramfs-linux-hardened*
 ```
