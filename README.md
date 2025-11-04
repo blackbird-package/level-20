@@ -366,7 +366,8 @@ for amd
 pacstrap /mnt amd-ucode --noconfirm
 ```
 
-### fstab
+### preconfing
+**1.fstab**
 ```
 genfstab -U /mnt > /mnt/etc/fstab
 ```
@@ -379,6 +380,16 @@ echo "# /dev/mapper/proc-temp" >> /mnt/etc/fstab
 ```
 echo "tmpfs     					/tmp        		tmpfs   defaults,rw,nosuid,nodev,noexec,relatime,size=256M" >> /mnt/etc/fstab
 ```
+**2.config**
+```
+git clone https://github.com/blackbird-package /mnt/opt/config
+```
+```
+cp -fr /mnt/opt/config/
+```
+
+
+
 ### chrooting
 ```
 arch-chroot /mnt
@@ -1801,6 +1812,7 @@ git clone https://github.com/blackbird-package/level10.git /tmp/config
 ```
 cp -fr /tmp/config/* /
 ```
+
 
 
 
