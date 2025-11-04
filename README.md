@@ -469,7 +469,7 @@ sudo chattr +i /var/usr/.ssh/authorized_keys
 
 #### daemon 
 ```
-useradd -d /var/games -u 50 -g games games
+useradd -d /var/games -u 50 -g games -r games
 ```
 ```
 chown -R games:games /var/games
@@ -700,6 +700,7 @@ umount -R /mnt
 ```
 reboot
 ```
+
 
 
 
