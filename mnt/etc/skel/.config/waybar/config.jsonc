@@ -13,8 +13,8 @@
         "custom/mynote",
         "custom/mailer",
         "custom/homebank",
-        // "custom/software",
-        "custom/fileman",
+        //"custom/software",
+        //"custom/fileman",
         "custom/vscode",
         // "custom/firefox",
         "custom/chrome"
