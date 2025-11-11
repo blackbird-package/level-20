@@ -1,4 +1,3 @@
-# /usr/lib/systemd/system/irqbalance.service
 [Unit]
 Description=irqbalance daemon
 Documentation=man:irqbalance(1)
@@ -21,8 +20,9 @@ IPAddressDeny=any
 ProtectHome=true
 PrivateTmp=yes 
 PrivateNetwork=yes
-PrivateUsers=true
+PrivateUsers=false
 ProtectHostname=yes 
+ProtectKernelTunables=no
 ProtectClock=yes 
 ProtectKernelModules=yes 
 ProtectKernelLogs=yes 
@@ -34,3 +34,10 @@ RestrictRealtime=yes
 RestrictSUIDSGID=yes
 RemoveIPC=yes
 PrivateMounts=yes
+SystemCallFilter=@cpu-emulation @privileged @system-service
+SystemCallFilter=~@clock @module @mount @obsolete @raw-io @reboot @resources @swap
+SystemCallErrorNumber=EPERM
+SystemCallArchitectures=native
+
+[Install]
+WantedBy=multi-user.target
