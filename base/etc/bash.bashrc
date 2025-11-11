@@ -24,7 +24,11 @@ if [[ -r /usr/share/bash-completion/bash_completion ]]; then
   . /usr/share/bash-completion/bash_completion
 fi
 
+# export term
 export TERM=xterm-256color
+
+# export editor
+export EDITOR=/usr/bin/nvim
 
 ## blackbird bash themes
 function blaskbird_bashthemes() {
