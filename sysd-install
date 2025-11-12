@@ -78,12 +78,6 @@ pacman -S linux-zen linux-firmware-intel mkinitcpio lvm2 btrfs-progs scx-scheds 
 
 
 
-
-
-
-
-
-
 ## application
 sleep 3 && clear &&
 echo "level 7"&&
