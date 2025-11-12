@@ -1,5 +1,5 @@
 [Unit]
-Description=Aide check every 2 Hourse
+Description=File integristy check every 2 hours
 
 [Timer]
 OnCalendar=*:0/2:00

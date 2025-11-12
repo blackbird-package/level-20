@@ -1,5 +1,5 @@
 [Unit]
-Description=Aide Check
+Description=File integristy check
 ConditionACPower=true
 
 [Service]

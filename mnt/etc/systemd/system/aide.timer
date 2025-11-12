@@ -1,9 +1,0 @@
-[Unit]
-Description=Aide check every 2 Hourse
-
-[Timer]
-OnCalendar=*:0/2:00
-Unit=aide.service
-
-[Install]
-WantedBy=multi-user.target

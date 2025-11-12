@@ -1,5 +1,5 @@
 [Unit]
-Description=Run the system update daily
+Description=Raven auto system update hourly
 
 [Timer]
 OnCalendar=hourly

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source $(pwd)/themes/bash
-source $(pwd)/auxiler/aliasers
-source $(pwd)/auxiler/notifier
-source $(pwd)/auxiler/tunnels
