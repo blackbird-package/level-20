@@ -220,6 +220,7 @@ systemctl enable systemd-resolved &&
 systemctl enable aide.timer &&
 systemctl enable sddm &&
 systemctl enable firewalld &&
+systemctl enable iwd &&
 
 
 ## service deactivation
@@ -233,3 +234,10 @@ sleep 3 && clear &&
 echo "level 19" &&
 aide --init &&
 mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
+
+## cleaning
+sleep 3 && clear &&
+echo "level 19" &&
+rm -fr /opt/config &&
+echo "successfully"
+
