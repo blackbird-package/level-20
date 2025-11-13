@@ -93,12 +93,14 @@ mkdir -p /etc/skel/.icons &&
 tar -xf /tmp/eggs/pkg.tar.xz -C /usr/share/icons/ &&
 tar -xf /tmp/eggs/pkg.tar.xz -C /etc/skel/.icons/ &&
 echo "successfully" &&
+
 ## sddm
 sleep 3 && clear &&
 echo "level 6" &&
 git clone https://github.com/blackbird-package/claw.git /tmp/claw &&
 tar -xf /tmp/claw/pkg.tar.xz -C /usr/share/sddm/themes &&
 echo "successfully" &&
+
 ## application
 sleep 3 && clear &&
 echo "level 7"&&
@@ -197,9 +199,8 @@ echo "data UUID=$(blkid -s UUID -o value $PHYSICAL_DATA) none" >> /etc/crypttab 
 sleep 3 && clear &&
 echo "level 16" &&
 rm -fr /etc/mkinitcpio.conf.d &&
-rm /boot/initramfs-linux-zen* &&
 mkdir -p /boot/efi /boot/efi/linux /boot/efi/systemd /boot/efi/rescue /boot/efi/boot /boot/kernel &&
-mv /boot/*-ucode.img /boot/vmlinuz-linux-zen /boot/kernel &&
+mv /boot/*-ucode.img /boot/kernel &&
 bootctl --path=/boot install &&
 mkinitcpio -P &&
 
