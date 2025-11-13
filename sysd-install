@@ -58,7 +58,7 @@ fi
 ## package
 sleep 3 && clear &&
 echo "level 3" &&
-pacman -S linux-zen linux-firmware-intel mkinitcpio lvm2 btrfs-progs scx-scheds $ucodes bubblewrap \
+pacman -Sy linux-zen linux-firmware-intel mkinitcpio lvm2 btrfs-progs scx-scheds $ucodes bubblewrap \
     sudo debugedit fakeroot pkgconf bison gcc pcre flex wget make gcc curl less git systemd-ukify \
     pipewire pipewire-pulse pipewire-jack wireplumber pavucontrol sof-firmware mpd mpc \
     brightnessctl xorg-xwayland uwsm libnewt \
