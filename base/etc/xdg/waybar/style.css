@@ -90,7 +90,6 @@ button:hover {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
 #wireplumber,
 #custom-media,
 #mode,
@@ -367,7 +366,9 @@ label:focus {
 #custom-vscode,
 #custom-netflix,
 #custom-ps2emu,
-#custom-fileman {
+#custom-fileman,
+#custom-homebank,
+#custom-mailer{
     margin-top: 10px;
     font-size: 13px;
     padding: 7px 15px; 
@@ -392,7 +393,8 @@ label:focus {
 #custom-audio,
 #custom-locks, 
 #custom-power,
-#network{
+#network,
+#pulseaudio{
     background-color:rgba(10, 10, 10, 0.7);
     padding: 7px 15px; 
     font-weight: bold;
@@ -417,9 +419,7 @@ label:focus {
     color: #2ecc71;
 }
 
-
-#custom-audio{
-   
+#pulseaudio{
     padding: 0 13px 0 9px;
 }
 
